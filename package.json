@@ -1,0 +1,16 @@
+{
+  "name": "perfecty-push-docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "gatsby": "^2.32.13",
+    "gatsby-theme-apollo-docs": "4.7.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
