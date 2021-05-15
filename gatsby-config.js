@@ -2,16 +2,21 @@ const themeOptions = require('gatsby-theme-apollo-docs/theme-options');
 
 module.exports = {
   pathPrefix: '/',
+  siteMetadata: {
+    title: `Perfecty Push`,
+    description: `Self-hosted Push Notifications`,
+    author: `@rwngallego`,
+  },
   plugins: [
     {
       resolve: 'gatsby-theme-apollo-docs',
       options: {
         ...themeOptions,
         root: __dirname,
-        contentDir: 'src',
+        contentDir: 'source',
         subtitle: 'Perfecty Push',
         description: 'A guide to using Apollo Server',
-        githubRepo: 'apollographql/apollo-server',
+        githubRepo: 'rwngallego/perfecty-push-docs',
         defaultVersion: '1',
         versions: {
           '1': 'version-1'
@@ -19,8 +24,7 @@ module.exports = {
         sidebarCategories: {
           null: [
             'index',
-            'getting-started',
-            'whats-new'
+            'testing/test'
           ],
           Features: [
             'features/mocking',
