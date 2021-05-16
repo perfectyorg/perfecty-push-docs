@@ -8,6 +8,6 @@ Check the documentation at:
 
 ## License
 
-Licensed under the MIT License, Copyright © 2020-present Greg Bergé.
+Licensed under the MIT License, Copyright © 2021-present Rowinson Gallego.
 
 See [LICENSE](./LICENSE) for more information.

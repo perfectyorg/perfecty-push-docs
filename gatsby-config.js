@@ -20,12 +20,9 @@ module.exports = {
         sidebarCategories: {
           null: [
             'index',
-            'first-steps'
-          ],
-          Advanced: [
-            'advanced/installation',
-            'advanced/configuration',
-            'advanced/troubleshooting'
+            'installation',
+            'configuration',
+            'troubleshooting'
           ],
           Support: [
             'support/contact'

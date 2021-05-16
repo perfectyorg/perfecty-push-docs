@@ -1,15 +1,13 @@
 ---
 title: Troubleshooting
-description: What is Apollo Server and what does it do?
-pageTitle: GEtting stareted
-subTitle: Start here to learn how to build apps with the analytics
+description: Solutions to common problems
 ---
 
 ## Better performance
 
 For better performance we recommend enabling the `gmp` extension (GNU Multiple Precision).
 
-## Install the gmp extension
+## How to install the gmp extension
 
 In Ubuntu you would do:
 
@@ -27,11 +25,11 @@ sudo service php-fpm restart
 
 This happens if you have PHP <= 7.2 and miss the `gmp` extension. Perfecty Push will be disabled until you install the `gmp` extension or generate the keys manually.
 
-### Installing the gmp extension
+### 1. Install the gmp extension
 
-Follow the instructions to install it above, and then deactivate/activate the plugin from the WordPress plugin UI. This will generate the keys automatically for you.
+Follow the instructions above, and then deactivate/activate the plugin from the WordPress plugin UI. This will generate the keys automatically for you.
 
-### Generating the VAPID keys manually using `openssl`
+### 2. Generating the VAPID keys manually using `openssl`
 
 From your WordPress server run:
 
