@@ -20,7 +20,6 @@ module.exports = {
         sidebarCategories: {
           null: [
             'index',
-            'installation',
             'configuration',
             'troubleshooting'
           ],
