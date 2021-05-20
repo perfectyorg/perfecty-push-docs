@@ -20,8 +20,8 @@ module.exports = {
         sidebarCategories: {
           null: [
             'index',
-            'configuration',
-            'troubleshooting'
+            'wp/configuration',
+            'wp/troubleshooting'
           ],
           Support: [
             'support/contact'
