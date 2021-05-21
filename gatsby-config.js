@@ -14,7 +14,7 @@ module.exports = {
         baseUrl: 'https://docs.perfecty.org',
         siteName: 'Perfecty Push Documentation',
         description: 'Perfecty Push Docs',
-        githubRepo: 'rwngallego/perfecty-push-docs',
+        githubRepo: 'perfectyorg/perfecty-push-docs',
         defaultVersion: '1',
         shareImageConfig: {},
         sidebarCategories: {
