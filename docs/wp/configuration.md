@@ -18,8 +18,9 @@ Property | Default value | Description
 Enabled | `True` | Show the widget in your website public frontend.
 Remove conflicting workers (Don't use it with PWA/AMP) | `False` | Removes all the workers from all the scopes (useful when migrating from another provider). Don't use this in a PWA/AMP website.
 Enable debugging | `False` | Enable the debugging in the JS SDK. Useful for troubleshooting.
-Hide bell after subscribing | `False` | Hides the bell after the user has subscribed to your website. Note that the user will not have a way to unsubscribe and will be forced to revoke you the Browser permissions.
 Service Worker Scope | `/perfecty/push` | This is the scope of the service worker. By default we use a value different than root `(/)`
+Do not use widgets (ask permissions directly) | `False` | Ask permissions right after the use visits the website. Don't use the dialog/bell controls.
+Hide bell after subscribing | `False` | Hides the bell after the user has subscribed to your website. Note that the user will not have a way to unsubscribe and will be forced to revoke you the Browser permissions.
 Subscribe text | `''` | This is the text of the question asked to the user for subscribing to Push Notifications. (Default: `Do you want to receive notifications?`)
 Continue text | `''` | Text of the Button to continue (Default: `Continue`)
 Cancel text | `''` | Text of the Button to cancel (Default: `Cancel`)
@@ -41,6 +42,7 @@ Vapid Private Key | Auto generated | Private VAPID Key
 Vapid Public Key | Auto generated | Public VAPID Key (Used in the JS SDK)
 Custom REST Url | The value returned by [`get_rest_url()`](https://developer.wordpress.org/reference/functions/get_rest_url/) | This is the REST API url to call from the Javascript SDK
 Batch Size | `30` | The number of notifications to send in each batch. Each execution from `wp-cron` will send this number of push messages and will continue in the next cycle.
+Enable logs | `False` | Enables the logs in the server side.
 
 ## 3. Segmentation
 
