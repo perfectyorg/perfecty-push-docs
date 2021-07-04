@@ -7,20 +7,18 @@ There are currently three different areas you can configure:
 
 ## 1. Public widget
 
-They are for the frontend widgets (The Subscription dialog and the Bell button) and the Javascript SDK.
+They affect the controls shown in the front page (the Subscription prompt/the Bell icon).
 
-![images/settings-1.png](images/settings-1.png)
+![images/settings-widget.png](images/settings-widget.png)
 
 Each of the values is described below:
 
-Property | Default value | Description
+Setting | Default value | Description
 --- | --- | ---
 Enabled | `True` | Show the widget in your website public frontend.
-Remove conflicting workers (Don't use it with PWA/AMP) | `False` | Removes all the workers from all the scopes (useful when migrating from another provider). Don't use this in a PWA/AMP website.
-Enable debugging | `False` | Enable the debugging in the JS SDK. Useful for troubleshooting.
-Service Worker Scope | `/perfecty/push` | This is the scope of the service worker. By default we use a value different than root `(/)`
-Do not use widgets (ask permissions directly) | `False` | Ask permissions right after the use visits the website. Don't use the dialog/bell controls.
-Hide bell after subscribing | `False` | Hides the bell after the user has subscribed to your website. Note that the user will not have a way to unsubscribe and will be forced to revoke you the Browser permissions.
+Display after this number of visits | `0` | Required number of visits to the website before displaying the subscription prompt.
+Do not use widgets (ask permissions directly) | `False` | Ask permissions right after the use visits the website. Will not show the dialog/bell controls.
+Hide bell after subscribing | `False` | Hides the bell after the user has subscribed to your website. Note that the users will not have a way to unsubscribe and will be forced to revoke you the Browser permissions.
 Subscribe text | `''` | This is the text of the question asked to the user for subscribing to Push Notifications. (Default: `Do you want to receive notifications?`)
 Continue text | `''` | Text of the Button to continue (Default: `Continue`)
 Cancel text | `''` | Text of the Button to cancel (Default: `Cancel`)
@@ -28,11 +26,58 @@ Bell title | `''` | Title of the Settings dialog when the Bell icon is clicked (
 Opt-in text | `''` | Text of the Opt-in checkbox (Default `I want to receive notifications`)
 Message on update error | `''` | Text shown when there's an error updating the preferences (Default: `Could not change the preference, please try again`)
 
-## 2. Self-hosted server
+## 2. Javascript SDK
+
+They define how the SDK performs the registration and the Push Notifications.
+
+![images/settings-js-sdk.png](images/settings-js-sdk.png)
+
+Setting | Default value | Description
+--- | --- | ---
+Service Worker Scope | `/perfecty/push` | This is the scope of the service worker. By default we use a value different than root `(/)`
+Remove conflicting workers (Don't use it with PWA/AMP) | `False` | Removes all the workers from all the scopes (useful when migrating from another provider). Don't use this in a PWA/AMP website.
+Custom conflict detection | `''` | Specify a custom JS regex expression to remove specific conflicting Service Workers.  [More information](./conflict-resolution/)<br /><br /> Default expression: `(OneSignalSDKWorker|wonderpush-worker-loader|webpushr-sw|subscribers-com\/firebase-messaging-sw|gravitec-net-web-push-notifications|push_notification_sw)`
+Enable Client Logs| `False` | Enable the logs in the client (which uses the Javascript SDK). Useful for troubleshooting.
+
+## 3. Notifications
+
+Change the notifications that the users receive in their Browsers/Mobiles.
+
+![images/settings-notifications.png](images/settings-notifications.png)
+
+Setting | Default value | Description
+--- | --- | ---
+Fixed notifications (do not auto hide) | `False` | If checked the notifications will not disappear. Otherwise, they will fade out automatically after a couple of seconds.
+Default Icon | `Website's icon` | The default icon to be sent in all the notifications.
+
+## 4. Segmentation and Tracking
+
+This is for the user segmentation capabilities (still under development).
+
+![images/settings-segmentation.png](images/settings-segmentation.png)
+
+For the moment it supports the following values:
+
+Property | Default value | Description
+--- | --- | ---
+Enable and collect data from users | `False` | If enabled it will collect and store the IP address from the subscribers.
+UTM analytics | `''` | Paste the UTM Tracking for Google Analytics, for example: `utm_source=perfecty-push&utm_medium=web-push&utm_campaign=my-campaign-name`.
+
+## 5. Post publishing
+
+How to send notifications automatically after publishing a Post. 
+
+![images/settings-post-publishing.png](images/settings-post-publishing.png)
+
+Setting | Default value | Description
+--- | --- | ---
+Always send a notification | `False` |  It will always send a Push Notification when a Post is published. You can define it per post in the Post's metabox.
+
+## 6. Self-hosted server
 
 Define the options for your self-hosted Push Server.
 
-![images/settings-2.png](images/settings-2.png)
+![images/settings-server.png](images/settings-server.png)
 
 You can define the following values:
 
@@ -42,16 +87,4 @@ Vapid Private Key | Auto generated | Private VAPID Key
 Vapid Public Key | Auto generated | Public VAPID Key (Used in the JS SDK)
 Custom REST Url | The value returned by [`get_rest_url()`](https://developer.wordpress.org/reference/functions/get_rest_url/) | This is the REST API url to call from the Javascript SDK
 Batch Size | `30` | The number of notifications to send in each batch. Each execution from `wp-cron` will send this number of push messages and will continue in the next cycle.
-Enable logs | `False` | Enables the logs in the server side.
-
-## 3. Segmentation
-
-This is for the user segmentation capabilities (still under development).
-
-![images/settings-3.png](images/settings-3.png)
-
-For the moment it supports the following values:
-
-Property | Default value | Description
---- | --- | ---
-Enable and collect data from users | `False` | If enabled it will collect and store the IP address from the subscribers.
+Enable Server Logs | `False` | Enables the logs in the Push Server.
