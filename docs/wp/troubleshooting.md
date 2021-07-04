@@ -53,3 +53,7 @@ This is due to two reasons:
 - You have deleted the VAPID keys from the Settings.
 
 In any case, you can generate them automatically by deactivating/activating your plugin from the WordPress plugin UI (this won't remove your data).
+
+## Conflicts with external Service Workers
+
+Read the section [Conflict Resolution](./conflict-resolution)

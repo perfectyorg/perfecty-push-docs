@@ -21,7 +21,8 @@ module.exports = {
           null: [
             'index',
             'wp/configuration',
-            'wp/troubleshooting'
+            'wp/troubleshooting',
+            'wp/conflict-resolution'
           ],
           Support: [
             'support/contact'
