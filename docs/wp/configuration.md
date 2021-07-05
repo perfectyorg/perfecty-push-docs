@@ -3,7 +3,7 @@ title: Configuration
 description: How to customize Perfecty Push?
 ---
 
-There are currently three different areas you can configure:
+These are the different areas you can configure:
 
 ## 1. Public widget
 
