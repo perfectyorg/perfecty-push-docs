@@ -22,6 +22,7 @@ module.exports = {
             'index',
             'wp/configuration',
             'wp/troubleshooting',
+            'wp/performance-improvements',
             'wp/conflict-resolution'
           ],
           Support: [
