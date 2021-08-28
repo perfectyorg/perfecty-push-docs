@@ -86,6 +86,6 @@ Property | Default value | Description
 Vapid Private Key | Auto generated | Private VAPID Key
 Vapid Public Key | Auto generated | Public VAPID Key (Used in the JS SDK)
 Custom REST Url | The value returned by [`get_rest_url()`](https://developer.wordpress.org/reference/functions/get_rest_url/) | This is the REST API url to call from the Javascript SDK
-Batch Size | `1500` | Number of notifications to fetch from the Database in each sending loop. The higher the number requires higher memory, approx. `3052 * batch_size bytes`. For `1500`, it means `~4,36Mb` of RAM as maximum.
+Batch Size | `1500` | Number of notifications to fetch from the Database in each sending loop. The higher the number requires higher memory, approx. `3052 * batch_size bytes`. For `1500`, it means `~4,36Mb` of RAM used as maximum.
 Parallel Flushing Size | `50` | Number of concurrent notifications to send. A high value can cause Out Of Memory errors, so please adjust with caution according to your server specs. See: [Performance improvements](./performance-improvements/)
 Enable Server Logs | `False` | Enables the logs in the Push Server.

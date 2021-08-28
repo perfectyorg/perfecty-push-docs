@@ -6,11 +6,14 @@ description: How to adjust the self-hosted server to improve performance
 
 ## Parameters that impact performance
 
-The following parameters are described in [Configuration](./configuration/) and they influence in the performance of
+The following parameters are described in [Configuration](./configuration/#6-self-hosted-server) and they influence in the performance of
 the Push Server:
 
 - `batch_size`
 - `parallel_flushing_size`
+
+**Note:** The default value of `batch_size` has changed since `v1.4.0`, as the plugin now uses a different batching mechanism.
+It means that the old default value of `30` was changed to `1500`, and it now has a totally different meaning.
 
 ### Adjusting the `batch_size` parameter
 
