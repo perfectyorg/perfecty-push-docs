@@ -21,6 +21,7 @@ module.exports = {
           null: [
             'index',
             'wp/configuration',
+            'wp/migrate-other-providers',
             'wp/troubleshooting',
             'wp/performance-improvements',
             'wp/conflict-resolution'
