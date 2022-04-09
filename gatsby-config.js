@@ -25,6 +25,7 @@ module.exports = {
             'wp/apple-devices',
           ],
           "How to": [
+            'wp/customize',
             'wp/migrate-other-providers',
             'wp/performance-improvements',
             'wp/conflict-resolution',
