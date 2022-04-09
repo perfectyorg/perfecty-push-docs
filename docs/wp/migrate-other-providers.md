@@ -1,5 +1,5 @@
 ---
-title: How to migrate from other providers like OneSignal
+title: Migrate from other providers like OneSignal
 ---
 
 Perfecty Push can automatically migrate your subscribers from your old provider
@@ -12,7 +12,7 @@ This will progressively migrate your existing Push subscribers when they visit y
 You don't need any export/import operation and can take immediate advantage of the plugin. 
 
 It also means that the users that have not visited your website will not be migrated
-and will stay with your old provider until they visit your website.
+and will stay with your old provider unless they visit your website.
 
 Steps:
 
@@ -24,7 +24,7 @@ You do this by deactivating your old Push provider plugin in `WordPress > Plugin
 
 **NOTE: Be careful in this step if you have an AMP/PWA website.** [Read more](./conflict-resolution/).
 
-Go to `Perfecty Push > Settings > Javascript SDK` and activate the `Remove conflicting workers (Don't use it with PWA/AMP)`
+Go to `Perfecty Push > Settings > Javascript SDK` and activate the `Remove conflicting workers (Push Services only)`
 option.
 
 This will remove automatically your old provider Service Worker, [read how it works](./conflict-resolution/).

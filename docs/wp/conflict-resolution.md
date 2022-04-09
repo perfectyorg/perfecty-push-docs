@@ -1,5 +1,5 @@
 ---
-title: Service Worker conflicts
+title: Remove old Service Workers
 description: How to remove old Service Workers from other providers
 ---
 

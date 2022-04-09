@@ -3,9 +3,58 @@ title: Troubleshooting
 description: Solutions to common problems
 ---
 
+## Determine root causes
+
+Most likely the errors you face are related to your server configuration settings (server parameters/security policies/proxy params).
+To get a better idea on what could be causing them you can enable the logs in your Server or Client side.
+
+### Server side logs
+
+#### 1. Enable the server logs
+
+Go to `Perfecty Push > Settings > Self-hosted server` and use the `info` or `warning` level in the `Log level` option. 
+
+#### 2. Check the logs
+
+If the Log driver is `PHP - error_log()`, you can see the logs in your CPanel or Server administration logs section. Please read [this post in Stackoverflow](https://stackoverflow.com/questions/5127838/where-does-php-store-the-error-log-php-5-apache-fastcgi-and-cpanel)
+
+If the Log driver is `Database`, the logs can be found in `Perfecty Push > Logs`.
+
+Look for any related information when your problem happens.
+
+### Client side logs
+
+Sometimes, the root cause of the problem is in how the Javascript SDK in the Browser interacts with the server.
+
+#### 1. Enable the client logs
+
+To find any potential issues, you need to activate the `Enable client logs` option in `Perfecty Push > Settings > Javascript SDK`.
+
+#### 2. Ckeck the logs
+
+To view the logs in Chrome you need to activate the Developer tools in `Main menu > More tools > Developer Tools > Console`. Once opened,
+reload the page and see for any potential error message.
+
+## User registration fails
+
+If you act as an end user and opt-in for Push Notifications, the browser is registered in your website
+and it should be listed in the users list in `Perfecty > Users`.
+
+However, in some cases this registration process fails because your server doesn't allow the `*js.php` extension files.
+If you open the Developer tools in Chrome via `Chrome > More tools > Developer tools`, you see something like this:
+
+![images/registration-fails.png](images/registration-fails.png)
+
+The `.js.php` extension is needed to inject the Service Worker Scope headers in 
+[https://github.com/perfectyorg/perfecty-push-wp/blob/master/public/js/service-worker-loader.js.php](https://github.com/perfectyorg/perfecty-push-wp/blob/master/public/js/service-worker-loader.js.php).
+
+Have in mind that this is also the same file extension used by OneSignal.
+
 ## Better performance
 
 For better performance we recommend enabling the `gmp` extension (GNU Multiple Precision).
+
+Please read [How to improve performance](./performance-improvements).
 
 ## How to install the gmp extension
 

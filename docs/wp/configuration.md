@@ -35,7 +35,7 @@ They define how the SDK performs the registration and the Push Notifications.
 Setting | Default value | Description
 --- | --- | ---
 Service Worker Scope | `/perfecty/push` | This is the scope of the service worker. By default we use a value different than root `(/)`
-Remove conflicting workers (Don't use it with PWA/AMP) | `False` | Removes all the workers from all the scopes (useful when migrating from another provider). Don't use this in a PWA/AMP website.
+Remove conflicting workers (Push Services only) | `False` | Removes all the workers from all the scopes (useful when migrating from another provider). [More information](./conflict-resolution/)
 Custom conflict detection | `''` | Specify a custom JS regex expression to remove specific conflicting Service Workers.  [More information](./conflict-resolution/)<br /><br /> Default expression: `(OneSignalSDKWorker|wonderpush-worker-loader|webpushr-sw|subscribers-com\/firebase-messaging-sw|gravitec-net-web-push-notifications|push_notification_sw)`
 Enable Client Logs| `False` | Enable the logs in the client (which uses the Javascript SDK). Useful for troubleshooting.
 
@@ -81,11 +81,12 @@ Define the options for your self-hosted Push Server.
 
 You can define the following values:
 
-Property | Default value | Description
---- | --- | ---
-Vapid Private Key | Auto generated | Private VAPID Key
-Vapid Public Key | Auto generated | Public VAPID Key (Used in the JS SDK)
+Property | Default value                                               | Description
+--- |-------------------------------------------------------------| ---
+Vapid Private Key | Auto generated                                              | Private VAPID Key
+Vapid Public Key | Auto generated                                              | Public VAPID Key (Used in the JS SDK)
 Custom REST Url | The value returned by [`get_rest_url()`](https://developer.wordpress.org/reference/functions/get_rest_url/) | This is the REST API url to call from the Javascript SDK
-Batch Size | `1500` | Number of notifications to fetch from the Database in each sending loop. The higher the number requires higher memory, approx. `3052 * batch_size bytes`. For `1500`, it means `~4,36Mb` of RAM used as maximum.
-Parallel Flushing Size | `50` | Number of concurrent notifications to send. A high value can cause Out Of Memory errors, so please adjust with caution according to your server specs. See: [Performance improvements](./performance-improvements/)
-Enable Server Logs | `False` | Enables the logs in the Push Server.
+Batch Size | `1500`                                                      | Number of notifications to fetch from the Database in each sending loop. The higher the number requires higher memory, approx. `3052 * batch_size bytes`. For `1500`, it means `~4,36Mb` of RAM used as maximum.
+Parallel Flushing Size | `50`                                                        | Number of concurrent notifications to send. A high value can cause Out Of Memory errors, so please adjust with caution according to your server specs. See: [Performance improvements](./performance-improvements/)
+Log driver | `PHP - error_log()`                                         | Log driver. Values: `PHP - error_log()`, `Database`
+Log level | `error`                                                     | Default log level.

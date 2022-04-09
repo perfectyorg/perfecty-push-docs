@@ -21,10 +21,13 @@ module.exports = {
           null: [
             'index',
             'wp/configuration',
-            'wp/migrate-other-providers',
             'wp/troubleshooting',
+            'wp/apple-devices',
+          ],
+          "How to": [
+            'wp/migrate-other-providers',
             'wp/performance-improvements',
-            'wp/conflict-resolution'
+            'wp/conflict-resolution',
           ],
           Support: [
             'support/contact'

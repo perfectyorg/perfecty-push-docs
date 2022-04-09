@@ -1,5 +1,5 @@
 ---
-title: Performance improvements
+title: Improve performance
 description: How to adjust the self-hosted server to improve performance
 ---
 
